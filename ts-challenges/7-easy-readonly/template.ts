@@ -20,7 +20,7 @@ type MyReadonly<T> = {
 // }
 
 // 返回一个对象
-// 遍历传进来的obj
+// 遍历传进来的obj      in --> mapped   keyof --> lookup
 // 让每个Obj的property都加上readonly关键字
 // 通过key获取Obj里面的值
 
