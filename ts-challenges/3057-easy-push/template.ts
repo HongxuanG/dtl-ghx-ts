@@ -1,0 +1,1 @@
+type Push<T extends readonly any[], U> = T extends [...infer Rest] ? [...Rest, U] : never
