@@ -12,4 +12,5 @@ interface Todo1 {
 type f = MyReadonly2<Todo1, 'title' | 'description'>
 
 // 所学知识点
-// 1. 
+// 1. 泛型 参数的设置默认值
+// 2. 
