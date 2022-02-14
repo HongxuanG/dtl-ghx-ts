@@ -4,3 +4,4 @@ type Replace<S extends string, From extends string, To extends string> = From ex
 // infer + 模板字面量类型
 // Conditional Type
 // 先判断From是不是空，再把To和From进行替换
+// ss
