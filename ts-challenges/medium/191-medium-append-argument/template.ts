@@ -6,5 +6,7 @@ type AppendArgument<Fn extends (...args: any) => ReturnType<Fn>, A> = Fn extends
 type Case1 = AppendArgument<(a: number, b: string) => number, boolean>
 
 // 没想到还能这么写：   (...args: [...P, A]) => R
+
+
 // 我一开始想的是：  (...args: P, x: A]) => R
 // 我关注于 x这个参数名 
