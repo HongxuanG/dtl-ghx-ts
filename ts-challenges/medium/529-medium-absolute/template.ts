@@ -1,6 +1,8 @@
 type NumberStr = | '0' | '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9'
+// 我写的
 type Absolute<T extends number | string | bigint> = `${T}` extends `${infer A}${infer B}` ? A extends NumberStr ? `${A}${Absolute<B>}` : Absolute<B> : ''
-
+// 别人写的
+// type Absolute<T extends number | string | bigint> = `${T}` extends `-${infer K}` ? K : `${T}`
 
 // 递归
 // 1、`${T}` 把 T 转成string

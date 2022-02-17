@@ -1,3 +1,4 @@
+// 获取最后一个元素
 type Last<T extends any[]> = T extends [...infer Rest, infer P] ? P : never
 
 // 借助了数组解构的思路
