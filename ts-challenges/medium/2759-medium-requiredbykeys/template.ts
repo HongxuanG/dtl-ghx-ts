@@ -7,9 +7,13 @@ type RequiredByKeys<T extends Record<string, any>, K extends any = keyof T> = Co
 
 // 所学知识：
 // 1、重映射 remapping         as 操作符
-// 2、& 的另一层含义   union 之间的 交叉类型约束  
+// 2、& 的另一层含义   union 之间的 交叉类型约束
 
-
+/*
+  另外Omit和Pick是相反操作
+  Omit 省去指定 key 的键值对  最后输出剩下的键值对
+  Pick 摘取指定 key 的键值对  最后输出指定的键值对
+*/
 
 // type Copy<T> = { [K in keyof T]: T[K] }
 // type RequiredByKeys<T extends object, K extends keyof any = keyof T> = Copy<
@@ -20,7 +24,7 @@ type RequiredByKeys<T extends Record<string, any>, K extends any = keyof T> = Co
 // & 的约束
 type a1 = 'key' | 'name'
 type a2 = 'value' | 'name'
-type res = a1 & a2
+type res = a1 & a2    /// 'name'
 
 // type的拓展
 type a11 = {
