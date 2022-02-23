@@ -13,8 +13,16 @@ type s = 2 | 1 | 3
 type a = 1 extends s ? 'true' : 'false'
 
 // 第四种解法
-type First<T extends any[]> = T extends [infer First, ...infer Rest] ? First : never
+type First<T extends unknown[]> = T extends [infer First, ...unknown[]] ? First : never
+// type First<T extends any[]> = T extends [infer First, ...any[]] ? First : never
 
+/*
+  any和unknown的区别：
+    相同点：都代表任何类型
+    不同点：
+      unknown只能接收任何类型的值
+      any 接收任何类型的值，也可以赋值给任何类型
+*/
 
 // function first(array) {
 //   return array[0]

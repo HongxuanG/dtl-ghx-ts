@@ -1,4 +1,4 @@
-type MyReturnType<T extends (...args: any) => any> = T extends (...args: any) => infer P ? P : never
+type MyReturnType<T extends Function> = T extends (...args: any) => infer P ? P : never
 
 // 所学知识
 // 这一题typescript的官方文档就有

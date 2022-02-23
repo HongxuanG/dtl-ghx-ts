@@ -1,4 +1,5 @@
 type Push<T extends any[], U> = T extends [...infer Rest] ? [...Rest, U] : never
+// type Push<T extends unknown[], U> = [...T, U]
 
 // type Push<T extends readonly any[], U> = [...T, U]
 

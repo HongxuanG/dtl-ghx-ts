@@ -1,5 +1,5 @@
 // 获取函数的参数
-type MyParameters<T extends (...args: any[]) => any> = T extends (...args: infer P) => any ? P : never
+type MyParameters<T extends Function> = T extends (...args: infer P) => unknown ? P : never
 
 
 // function parameters(...args: any[]) {
