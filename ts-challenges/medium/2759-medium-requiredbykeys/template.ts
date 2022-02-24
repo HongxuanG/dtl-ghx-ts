@@ -36,3 +36,4 @@ type a22 = {
 type res1 = a11 & a22
 type res2 = res1['name']   // '11'
 type res3 = res1['age']    // '9'
+
