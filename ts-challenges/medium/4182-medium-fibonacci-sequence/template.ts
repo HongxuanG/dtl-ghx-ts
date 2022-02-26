@@ -1,4 +1,4 @@
-type FibonacciLoop1<
+type FibonacciLoop<
   PrevArr extends unknown[],
   CurrentArr extends unknown[],
   IndexArr extends unknown[] = [],
@@ -8,6 +8,4 @@ type FibonacciLoop1<
   : FibonacciLoop<CurrentArr, [...PrevArr, ...CurrentArr], [...IndexArr, unknown], Num>
 // 斐波那契数列 1、1、2、3、5、8、13、21、34、……
 // F(0) = 1，F(1) = 1, F(n) = F(n - 1) + F(n - 2)（n ≥ 2，n ∈ N*）
-type Fibonacci1<Num extends number> = FibonacciLoop1<[unknown], [], [], Num>
-
-type example4 = Fibonacci1<3>
+type Fibonacci<Num extends number> = FibonacciLoop<[unknown], [], [], Num>
