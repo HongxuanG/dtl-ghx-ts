@@ -1,10 +1,10 @@
 type MyTupleToUnion<T extends unknown[] = []> = T[number]
 
-type UnionToIntersection<U> =
+type UnionToIntersection1<U> =
   (U extends any ? (k: U) => void : never) extends ((k: infer I) => void) ? I : never
 
 type LastOf<T> =
-  UnionToIntersection<T extends any ? () => T : never> extends () => (infer R) ? R : never
+  UnionToIntersection1<T extends any ? () => T : never> extends () => (infer R) ? R : never
 
 // TS4.0+
 type MyPush<T extends any[], V> = [...T, V];
