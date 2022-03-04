@@ -1,3 +1,4 @@
+// 取出必选的键值对
 type GetRequired<T> = {
   [key in keyof T as T[key] extends Required<T>[key] ? key : never]: T[key]
 }
