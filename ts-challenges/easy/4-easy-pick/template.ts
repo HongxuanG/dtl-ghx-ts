@@ -1,11 +1,6 @@
-
-
 type MyPick<T, K extends keyof T> = {
   [key in K]: T[key]
 }
-
-
-
 
 // function myPick(todo, keys) {
 
@@ -22,7 +17,6 @@ type MyPick<T, K extends keyof T> = {
 // 2.遍历第二个参数keys
 // 3.取值 todo[key]
 // 4.看看key在不在todo里面
-
 
 // 所用知识点
 // 遍历联合类型 mapped

@@ -1,5 +1,8 @@
 type Chainable<T extends { [key in keyof T]: T[key] } = {}> = {
-  option<K extends Omit<T, keyof T> & string, V>(key: Exclude<K, keyof T>, value: V): Chainable<T & Record<K, V>>
+  option<K extends Omit<T, keyof T> & string, V>(
+    key: Exclude<K, keyof T>,
+    value: V
+  ): Chainable<T & Record<K, V>>
   get(): Omit<T, 'option' | 'get'>
 }
 declare const a: Chainable

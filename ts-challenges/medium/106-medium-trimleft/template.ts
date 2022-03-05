@@ -1,7 +1,8 @@
 // Instruction： Implement TrimLeft<T> which takes an exact string type and returns a new string with the whitespace beginning removed.
 
-type TrimLeft<S extends string> = S extends `${' ' | '\t' | '\n'}${infer Rest}` ? TrimLeft<Rest> : S
-
+type TrimLeft<S extends string> = S extends `${' ' | '\t' | '\n'}${infer Rest}`
+  ? TrimLeft<Rest>
+  : S
 
 // 解决方案参考
 // --https://juejin.cn/post/7045536402112512007

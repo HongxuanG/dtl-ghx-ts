@@ -1,7 +1,4 @@
-type Unique<
-  T extends unknown[]
-  > = 
-  T extends [...infer Rest, infer Last]
+type Unique<T extends unknown[]> = T extends [...infer Rest, infer Last]
   ? Last extends Rest[number]
     ? Unique<Rest>
     : [...Unique<Rest>, Last]

@@ -1,15 +1,19 @@
 {
   "name": "ghx-ts",
   "version": "1.0.0",
-  "description": "",
+  "description": "type-challenges作业本",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "format": "prettier --write \"**/*.{ts,tsx,js,jsx,json,.md}\""
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "@type-challenges/utils": "^0.1.1"
+  },
+  "devDependencies": {
+    "prettier": "^2.5.1",
+    "typescript": "^4.6.2"
   }
 }

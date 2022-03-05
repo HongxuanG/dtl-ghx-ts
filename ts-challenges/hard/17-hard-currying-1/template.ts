@@ -1,5 +1,4 @@
-type CurryFun<Fn> =
-  Fn extends (...args: infer Args) => infer ReturnType
+type CurryFun<Fn> = Fn extends (...args: infer Args) => infer ReturnType
   ? Args extends [infer First, ...infer Rest]
     ? Args['length'] extends 1
       ? (arg: First) => ReturnType

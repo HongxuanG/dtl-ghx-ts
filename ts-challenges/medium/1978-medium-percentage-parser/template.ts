@@ -1,4 +1,3 @@
-
 type PercentageParser<A extends string> =
   A extends `${infer Prefix}${infer Num}${infer Subfix}`
     ? Prefix extends `${'+' | '-' | ''}`
@@ -9,5 +8,3 @@ type PercentageParser<A extends string> =
         : never
       : never
     : never
-  
-  

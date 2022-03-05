@@ -16,7 +16,7 @@ const result2 = a
 
 type cases = [
   Expect<Alike<typeof result1, Expected1>>,
-  Expect<Alike<typeof result2, Expected2>>,
+  Expect<Alike<typeof result2, Expected2>>
 ]
 
 type Expected1 = {

@@ -4,8 +4,6 @@
 // 第二种解法
 // type First<T extends any[]> = T['length'] extends 0 ? never : T[0]
 
-
-
 // 第三种解法
 // type First<T extends any[]> = T[0] extends T[number] ? T[0] : never
 
@@ -13,7 +11,9 @@ type s = 2 | 1 | 3
 type a = 1 extends s ? 'true' : 'false'
 
 // 第四种解法
-type First<T extends unknown[]> = T extends [infer First, ...unknown[]] ? First : never
+type First<T extends unknown[]> = T extends [infer First, ...unknown[]]
+  ? First
+  : never
 // type First<T extends any[]> = T extends [infer First, ...any[]] ? First : never
 
 /*

@@ -1,9 +1,14 @@
 type Copyy<T> = { [key in keyof T]: T[key] }
-type RequiredByKeys<T extends Record<string, any>, K extends any = keyof T> = Copyy<{
-  [key in keyof Pick<T, keyof T & K>]-?: T[key]
-} & {
+type RequiredByKeys<
+  T extends Record<string, any>,
+  K extends any = keyof T
+> = Copyy<
+  {
+    [key in keyof Pick<T, keyof T & K>]-?: T[key]
+  } & {
     [key in keyof T as key extends K ? never : key]?: T[key]
-  }>
+  }
+>
 
 // 所学知识：
 // 1、重映射 remapping         as 操作符
@@ -24,7 +29,7 @@ type RequiredByKeys<T extends Record<string, any>, K extends any = keyof T> = Co
 // & 的约束
 type a1 = 'key' | 'name'
 type a2 = 'value' | 'name'
-type res = a1 & a2    /// 'name'
+type res = a1 & a2 /// 'name'
 
 // type的拓展
 type a11 = {
@@ -34,6 +39,5 @@ type a22 = {
   age: '9'
 }
 type res1 = a11 & a22
-type res2 = res1['name']   // '11'
-type res3 = res1['age']    // '9'
-
+type res2 = res1['name'] // '11'
+type res3 = res1['age'] // '9'

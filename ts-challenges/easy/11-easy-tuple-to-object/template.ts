@@ -9,6 +9,5 @@ type TupleToObject<T extends readonly (string | number | symbol)[]> = {
 //   return res
 // }
 
-
 // 返回一个对象
 // 遍历数组   value in T[number]: value

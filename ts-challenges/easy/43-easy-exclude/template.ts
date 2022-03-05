@@ -1,7 +1,7 @@
 type MyExclude<T, U> = T extends U ? never : T
 
 // function exclude(array, array) {
-  
+
 // }
 
 // 所用到的知识点

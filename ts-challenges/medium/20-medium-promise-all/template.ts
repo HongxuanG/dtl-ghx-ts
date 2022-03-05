@@ -1,4 +1,6 @@
-declare function PromiseAll<T extends any[]>(values: readonly [...T]): Promise<{ [key in keyof T]: T[key] extends Promise<infer P> ? P : T[key] }>
+declare function PromiseAll<T extends any[]>(
+  values: readonly [...T]
+): Promise<{ [key in keyof T]: T[key] extends Promise<infer P> ? P : T[key] }>
 
 // 疑问？
 // Promise<{ [key in keyof T]: T[key] extends Promise<infer P> ? P : T[key]}>
@@ -16,8 +18,6 @@ declare function PromiseAll<T extends any[]>(values: readonly [...T]): Promise<{
 
 /*********** */
 // 唯一的解释是数组也是对象？
-
-
 
 // type ss<T extends any[]> = T  // 两种写法 效果不是一样的吗？
 // type ss<T> = { [key in keyof T]: T[key] }

@@ -4,12 +4,11 @@
 //   : DeepReadonly<T[key]>
 // }
 type DeepReadonly<T> = {
-  readonly [key in keyof T]:
-  T[key] extends Object
+  readonly [key in keyof T]: T[key] extends Object
     ? T[key] extends Function
       ? T[key]
       : DeepReadonly<T[key]>
-    :T[key]
+    : T[key]
 }
 
 // 所学知识点

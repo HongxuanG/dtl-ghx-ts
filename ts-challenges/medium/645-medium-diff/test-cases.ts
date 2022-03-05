@@ -12,5 +12,5 @@ type Bar = {
 
 type cases = [
   Expect<Equal<Diff<Foo, Bar>, { gender: number }>>,
-  Expect<Equal<Diff<Bar,Foo>, { gender: number }>>
+  Expect<Equal<Diff<Bar, Foo>, { gender: number }>>
 ]

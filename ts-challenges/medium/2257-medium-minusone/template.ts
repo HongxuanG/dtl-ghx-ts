@@ -9,12 +9,8 @@
 //     ? Arr
 //     : createArr<T, [unknown, ...Arr]>
 // type Maxlimit = MinusOne<1100>       // 1000就提示实例化过深了 返回number
-    
+
 // type MinusOne<T extends number> = createArr<T> extends [arr1: unknown, ...arr2: infer Rest] ? Rest['length'] : never
-
-
-
-
 
 type Make10Array<T extends any[]> = [
   ...T,
@@ -26,18 +22,19 @@ type Make10Array<T extends any[]> = [
   ...T,
   ...T,
   ...T,
-  ...T,
+  ...T
 ]
-type Make1Array<T extends string, L extends any[] = []> =
-  `${L['length']}` extends T
-    ? L
-    : Make1Array<T, [1, ...L]>
-    
+type Make1Array<
+  T extends string,
+  L extends any[] = []
+> = `${L['length']}` extends T ? L : Make1Array<T, [1, ...L]>
 
-type MakeArray<T extends string, L extends any[] = []> = T extends `${infer F}${infer R}` ? MakeArray< R, [
-  ...Make10Array<L>,
-  ...Make1Array<F>
-]> : L
+type MakeArray<
+  T extends string,
+  L extends any[] = []
+> = T extends `${infer F}${infer R}`
+  ? MakeArray<R, [...Make10Array<L>, ...Make1Array<F>]>
+  : L
 
 type Pop1<T extends any[]> = T extends [...infer R, infer L] ? R : []
 

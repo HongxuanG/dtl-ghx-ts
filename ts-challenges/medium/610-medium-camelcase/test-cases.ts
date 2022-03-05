@@ -12,5 +12,5 @@ type cases = [
   Expect<Equal<CamelCase<'ABC'>, 'ABC'>>,
   Expect<Equal<CamelCase<'-'>, '-'>>,
   Expect<Equal<CamelCase<''>, ''>>,
-  Expect<Equal<CamelCase<'😎'>, '😎'>>,
+  Expect<Equal<CamelCase<'😎'>, '😎'>>
 ]

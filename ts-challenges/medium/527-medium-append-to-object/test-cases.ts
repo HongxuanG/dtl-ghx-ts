@@ -40,5 +40,10 @@ type testExpect3 = {
 type cases = [
   Expect<Equal<AppendToObject<test1, 'home', boolean>, testExpect1>>,
   Expect<Equal<AppendToObject<test2, 'home', 1>, testExpect2>>,
-  Expect<Equal<AppendToObject<test3, 'isMotherRussia', false | undefined>, testExpect3>>,
+  Expect<
+    Equal<
+      AppendToObject<test3, 'isMotherRussia', false | undefined>,
+      testExpect3
+    >
+  >
 ]
