@@ -3,7 +3,7 @@ type MyMerge<T> = {
 }
 type DeepObjectToUniq<O extends object> = {
   [key in keyof O]: O[key] extends object 
-    ? DeepObjectToUniq<MyMerge<O[key] & { _xxx?: [O, key] }>>
+    ? DeepObjectToUniq<MyMerge<O[key] & { 1122?: [O, key] }>>
     : O[key]
 }
 
