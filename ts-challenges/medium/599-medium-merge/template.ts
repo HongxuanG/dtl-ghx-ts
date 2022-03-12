@@ -7,3 +7,6 @@ type Merge<F, S> = {
     ? F[key]
     : never
 }
+/**
+ * keyof F | keyof S 起到关键作用
+ */
