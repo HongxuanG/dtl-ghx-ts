@@ -1,9 +1,15 @@
 type MyUnionToIntersection<U> = 
   (U extends U ? (x: U) => unknown : never) extends (x: infer R) => unknown ? R : never
 
-
-type DeepPick<O extends object, Target extends string> = 
+type DeepPickRes<O extends Record<string, any>, Target extends string> =
   Target extends `${infer F}.${infer S}`
-  ? F extends F ? {
-      `${F}`:
-    }
+  ? {
+    [P in F]: DeepPickRes<O[P], S>
+  }
+  : Target extends keyof O
+    ? {
+      [K in keyof O as K extends Target ? K : never]: O[K]
+    } : unknown
+
+type DeepPick<O extends object, Target extends string> = MyUnionToIntersection<DeepPickRes<O, Target>>
+  
