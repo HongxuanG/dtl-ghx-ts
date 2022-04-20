@@ -5,8 +5,6 @@ type EqualOrGreaterThan1<
   UseEqual extends boolean = false
   > = EqualGreaterThanHelper<T, U, UseEqual>
 
-
-
 type EqualGreaterThanHelper<
   T extends number,
   U extends number,
@@ -19,7 +17,6 @@ type EqualGreaterThanHelper<
   : CountArr['length'] extends U
   ? true
   : EqualGreaterThanHelper<T, U, UseEqual, [...CountArr, unknown]>
-
 
 // 小于或小于等于
 type EqualOrLessthan<
