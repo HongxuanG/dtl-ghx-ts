@@ -1,7 +1,7 @@
 type MyAwaited<T extends Promise<any>> = T extends Promise<infer S>
   ? S extends Promise<any>
-    ? MyAwaited<S>
-    : S
+  ? MyAwaited<S>
+  : S
   : T
 
 // async function Myawaited(Promise: Promise<any>) {
@@ -18,3 +18,4 @@ type MyAwaited<T extends Promise<any>> = T extends Promise<infer S>
 // 所用到的知识点
 // 1. 递归
 // 2. infer 推断 表示在 extends 条件语句中待推断的类型变量。
+
