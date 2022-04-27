@@ -25,12 +25,19 @@ type DeepCamelizeRes = {
       };
   }];
 }
+// 
 type DeepCamelize<O extends Record<string, any>> = 
   O extends Record<string, any>[]
   ? CamelizeArr<O>
   : {
-    [key in keyof O as key extends `${infer P}_${infer SS}` ? `${P}${Capitalize<SS>}` : key]: DeepCamelize<O[key]>
+    // 核心逻辑
+    [
+      key in keyof O as key extends `${infer P}_${infer SS}` 
+      ? `${P}${Capitalize<SS>}` 
+      : key
+    ]: DeepCamelize<O[key]>
   }
+// 每个数组对象做DeepCamelize
 type CamelizeArr<A > = 
   A extends [infer Cur, ...infer Rest]
   ? Cur extends object
