@@ -36,6 +36,11 @@ type MakeArray<
   ? MakeArray<R, [...Make10Array<L>, ...Make1Array<F>]>
   : L
 
+// 9 + 90 = 99
+// 9 + 990 = 999
+// 9 + 9990 = 9999
+type _9999Arr = MakeArray<'9999'>
+
 type Pop1<T extends any[]> = T extends [...infer R, infer L] ? R : []
 
 type MinusOne<T extends number> = Pop1<MakeArray<`${T}`>>['length']

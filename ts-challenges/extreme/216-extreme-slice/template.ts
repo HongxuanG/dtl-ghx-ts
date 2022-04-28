@@ -34,7 +34,9 @@ type StringToNumber<S extends string, CountArr extends unknown[] = []> =
   S extends `${CountArr['length']}`
   ? CountArr['length']
   : StringToNumber<S, [...CountArr, unknown]>
-  
+
+type Make
+
 type Slice<
   Arr extends unknown[],
   Start extends number = 0,
