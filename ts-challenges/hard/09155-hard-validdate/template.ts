@@ -33,6 +33,7 @@
 // type ValidDate<T extends string> = ValidDateHelper<StringToTuple<T>>
 
 // 想复杂了，其实类型匹配就行，我那思路是按照js的思路来的，没用匹配的思想
+// 我还定义了一个SubString 连个两个字符分割开来，再转成number，构造数组，利用数组的length和month、day比较大小
 
 
 // 答案
